@@ -1,0 +1,14 @@
+{
+    "database": {
+        "host": "localhost",
+        "port": 5432,
+        "settings": {
+            "setting1": "val1",
+            "setting2": "val2"
+        },
+        "features": [
+            "feature1",
+            "feature2"
+        ]
+    }
+}
