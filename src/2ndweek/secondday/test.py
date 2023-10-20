@@ -1,3 +1,4 @@
-password = "1234"
-if password == "1234":
-     print("Password correct!")
+def display_value(value = 8):
+    print(value)
+    
+display_value()
