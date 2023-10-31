@@ -18,3 +18,5 @@ val = (name,age)
 mycursor.execute(insert_query,val)
 mydb.commit()
 search_query = "select * from test1 where name = dummy"
+
+#asd
