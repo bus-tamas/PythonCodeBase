@@ -68,12 +68,58 @@ def main():
     w_clean = list()
     #do not change the code above this line.
     
-    #your code goes here 
-    
+    for word in w:
+        if word and not all(char in string.punctuation for char in word):
+            if word[0] in string.punctuation:
+                word = word[1:]
+            if word[-1] in string.punctuation:
+                word = word[:-1]
+            w_clean.append(word)
+
     print(w_clean)
     print(len(w_clean))
 
+    words_clean = list()
+    for word in words:
+        if word and not all(char in string.punctuation for char in word):
+            if word[0] in string.punctuation:
+                word = word[1:]
+            if word[-1] in string.punctuation:
+                word = word[:-1]
+            words_clean.append(word)
 
+    print(words_clean)
+    print(len(words_clean))
+
+    # Step 7 - Finally, create a single script that performs all of the following operations on the original 's' string.
+    def script(s):
+        s_lower = s.lower()
+        words = list()
+        words = s_lower.split()
+        w_clean = list()
+        
+        for word in w:
+            if word and not all(char in string.punctuation for char in word):
+                if word[0] in string.punctuation:
+                    word = word[1:]
+                if word[-1] in string.punctuation:
+                    word = word[:-1]
+                w_clean.append(word)
+        print(len(words_clean))
+
+        word_freq = {}
+        for word in words:
+            if word in word_freq:
+                word_freq[word] += 1
+            else:
+                word_freq[word] = 1
+
+        for word, count in word_freq.items():
+            print(f"{word}: {count}")
+    
+        print("Number of Distinct Words:", distinct_word_count)
+
+    script(s)
 
 if __name__ == "__main__":
     main()
