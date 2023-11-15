@@ -100,3 +100,32 @@ def multiple_rotate_right(arr, n):
     return arr
 
 print(multiple_rotate_right(arr,3))
+
+def reverse_array(arr, start, end):
+    """
+    This function reverses a portion of an array from index start to end.
+    """
+    while start < end:
+        arr[start], arr[end] = arr[end], arr[start]
+        start += 1
+        end -= 1
+
+def rotate_array(arr, k):
+    """
+    This function rotates an array from right to left by k times.
+    """
+    n = len(arr)
+    # Normalize the rotations if k is greater than array length
+    k = k % n
+    # Reverse the entire array
+    reverse_array(arr, 0, n - 1)
+    # Reverse the first 'k' elements
+    reverse_array(arr, 0, k - 1)
+    # Reverse the remaining 'n - k' elements
+    reverse_array(arr, k, n - 1)
+
+# Test the function
+arr = [1, 2, 3, 4, 5, 6, 7]
+k = 3
+rotate_array(arr, k)
+print(arr)  # Output: [5, 6, 7, 1, 2, 3, 4]
