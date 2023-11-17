@@ -1,12 +1,15 @@
 import mysql.connector
 import pandas as pd 
 from datetime import datetime
+import os
 
-csv_file_path = r'C:\Users\Tamás\Desktop\Minden fájl\MS\C371 data\Final project\Superstore.csv'
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+csv_file_path = os.path.join(current_dir, 'Superstore.csv')
 
 df = pd.read_csv(csv_file_path, encoding='latin1')
 
-print(df.head())
+#print(df.head())
 
 def connectToDatabase(host,user,password,database):
     connector = mysql.connector.connect(
@@ -54,7 +57,6 @@ try:
 except Exception as e:
     print(e)
     print("Unsuccessful connection to the database")
-
 
 for index, row in df.iterrows():
     order_date = datetime.strptime(row['Order Date'], '%m/%d/%Y').strftime('%Y-%m-%d')
