@@ -5,16 +5,35 @@ https://colab.research.google.com/drive/1WWHlH8W6Gv1tGdxo2VExL1mWnRZBJ7sv?usp=sh
 
 
 Exploratory Data Analysis with Superstore Data
-This Colab notebook conducts an exploratory data analysis (EDA) on the Superstore dataset using Python's pandas and seaborn libraries.
+  The Colab notebook conducts an exploratory data analysis (EDA) on the Superstore dataset using Python's pandas and seaborn libraries.
+  
+  Steps: 
+  I loaded the data into a pandas DataFrame, then displayed basic information about the dataset, such as the first and last few rows, data types, and summary statistics.
+  The dataset was already in cleaned format (without null values or duplicates), so no further actions were needed.
+  I created boxplots to visually analyze the distribution of Sales and Profit across different product categories. 
+  Then I used pie charts to illustrate the ratios of different segments, regions, and product categories within the dataset.
+  After that I plotted a bar chart related the top 20 Products by count and the top 10 products by profit.
+  Then I used binning technique to categorize the sales records into 5 different categories and visualized it on a bar chart.
+  Then I Converted 'Order Date' to datetime format and analyzes daily sales trends in the year 2014, 2015, 2016.
+  I generated a correlation heatmap for all numerical columns and explored the correlation between Sales and Profit using a scatter plot.
+  I constructed a bubble chart to visualize the relationship between Sales, Profit, and Quantity, with bubble size representing Quantity.
+  Finally I used a pair plot to explore the relationships between numerical columns, focusing on Profit, Sales, and Quantity.
 
-Steps: 
-I loaded the data into a pandas DataFrame, then displayed basic information about the dataset, such as the first and last few rows, data types, and summary statistics.
-The dataset was already in cleaned format (without null values or duplicates), so no further actions were needed.
-I created boxplots to visually analyze the distribution of Sales and Profit across different product categories. 
-Then I used pie charts to illustrate the ratios of different segments, regions, and product categories within the dataset.
-After that I plotted a bar chart related the top 20 Products by count and the top 10 products by profit.
-Then I used binning technique to categorize the sales records into 5 different categories and visualized it on a bar chart.
-Then I Converted 'Order Date' to datetime format and analyzes daily sales trends in the year 2014, 2015, 2016.
-I generated a correlation heatmap for all numerical columns and explored the correlation between Sales and Profit using a scatter plot.
-I constructed a bubble chart to visualize the relationship between Sales, Profit, and Quantity, with bubble size representing Quantity.
-Finally I used a pair plot to explore the relationships between numerical columns, focusing on Profit, Sales, and Quantity.
+
+Loading the dataset into MySQL database --> (dataset_to_mysql.py)
+
+  This Python file establishes a connection to a MySQL database, reads a CSV file ('Superstore.csv') using pandas,
+  and creates a table named 'Superstore' with specified column names and data types if it doesn't exist.
+  The program then iterates through the rows of the DataFrame, converts date formats, and inserts the data into the MySQL table using parameterized queries.
+  After committing the changes, it closes the database connection.
+
+Visualizations -->  (final_project.pbix)
+
+I have developed a dashboard for the dataset, incorporating a slicer to facilitate the selection of the desired year or period for visualization. 
+The dashboard features three key performance indicators (KPIs): the Sum of Sales, Sum of Quantity, and Sum of Profit. 
+Additionally, I presented a geographical breakdown of sales across various regions, providing a map view that includes different states within the United States. 
+To explore the relationship between sales and profit, I plotted a graph depicting their correlation across different ship modes. 
+Lastly, I utilized a pie chart to visually represent the proportion of different categories within the dataset.
+
+
+
